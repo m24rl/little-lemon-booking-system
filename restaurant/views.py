@@ -40,8 +40,8 @@ def bookings(request):
         form = BookingForm(data)
         if not form.is_valid():
             return JsonResponse({'errors': form.errors}, status=400)
-        if not 11 <= form.cleaned_data['reservation_slot'] <= 19:
-            return JsonResponse({'error': 'Choose a slot from 11 through 19.'}, status=400)
+        if not 10 <= form.cleaned_data['reservation_slot'] <= 19:
+            return JsonResponse({'error': 'Choose a slot from 10 through 19.'}, status=400)
         try:
             with transaction.atomic():
                 form.save()

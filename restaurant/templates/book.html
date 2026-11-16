@@ -44,7 +44,7 @@ async function getBookings() {
     }
     if (!data.length) list.textContent = 'No bookings';
     slots.replaceChildren();
-    for (let hour = 11; hour <= 19; hour++) {
+    for (let hour = 10; hour <= 19; hour++) {
       const option = new Option(formatTime(hour), hour);
       option.disabled = occupied.has(hour);
       slots.appendChild(option);

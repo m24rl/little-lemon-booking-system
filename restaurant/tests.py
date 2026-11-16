@@ -11,7 +11,7 @@ class BookingWorkflowTests(TestCase):
         self.assertEqual(len(self.client.get('/bookings').json()), 1)
 
     def test_duplicate_slot_cannot_be_booked(self):
-        payload = {'first_name':'Ada', 'reservation_date':'2030-01-01', 'reservation_slot':11}
+        payload = {'first_name':'Ada', 'reservation_date':'2030-01-01', 'reservation_slot':10}
         self.assertEqual(self.client.post('/bookings', json.dumps(payload), content_type='application/json').status_code, 201)
         self.assertIn(self.client.post('/bookings', json.dumps(payload), content_type='application/json').status_code, [400,409])
         self.assertEqual(Booking.objects.count(), 1)

@@ -22,7 +22,7 @@ Open http://127.0.0.1:8000/book/ and http://127.0.0.1:8000/reservations/.
 
 ## Features and reviewer checks
 
-- Three booking fields: first name, reservation date with native calendar picker, reservation slot (11 AM through 7 PM).
+- Three booking fields: first name, reservation date with native calendar picker, reservation slot (10 AM through 7 PM).
 - Current local date is selected automatically and reservations load immediately.
 - Changing the date fetches fresh availability. An empty date displays **No bookings**.
 - Occupied slots are disabled. The backend and database constraint also prevent duplicate date/time reservations.
