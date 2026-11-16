@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<section><article>
+  <h1>All Reservations</h1>
+  <pre id="bookings"></pre>
+  {{ booking_json|json_script:"reservation-data" }}
+</article></section>
+<script>
+  const reservations = JSON.parse(document.getElementById('reservation-data').textContent);
+  document.getElementById('bookings').textContent = JSON.stringify(reservations, null, 2);
+</script>
+{% endblock %}
